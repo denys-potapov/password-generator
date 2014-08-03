@@ -26,4 +26,11 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $password = Generator::generate($wordList, 4, '-');
         $this->assertEquals('test-test-test-test', $password);
     }
+
+
+    public function testRuTranslit()
+    {
+        $password = Generator::generateRuTranslit(4, ' ');
+        $this->assertNotEmpty($password);
+    }
 }
