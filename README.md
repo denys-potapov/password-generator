@@ -2,7 +2,7 @@ password-generator
 ==================
 
 [![Build Status](https://travis-ci.org/thephpleague/statsd.png?branch=master)](https://travis-ci.org/thephpleague/statsd)
-[![Total Downloads](https://poser.pugx.org/league/statsd/downloads.png)](https://packagist.org/packages/league/statsd)
+[![Total Downloads](https://poser.pugx.org/barzo/password-generator/downloads.png)](https://packagist.org/packages/barzo/password-generator)
 
 PHP library for generating easy to remember but hard to quess passwords.
 Inspired by xkcd comics. Library has words list for differetnt languages
