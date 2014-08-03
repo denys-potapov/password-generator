@@ -9,7 +9,7 @@ use Barzo\Password\WordListInterface;
  *
  * Do not use this class directly. Use it ancestors.
  */
-class StaticArrayWordList implements WordListInterface
+class StaticArray implements WordListInterface
 {
     /**
      * array of words
