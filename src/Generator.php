@@ -42,4 +42,17 @@ class Generator
     {
         return self::generate(new WordList\RuTranslit(), $lenght, $separator);
     }
+
+    /**
+     * Static function to generate password with Russian words
+     * Uses Password\WordList\Ru
+     * 
+     * @param  integer           $lenght    password length (number of words). Default - 4
+     * @param  string            $separator word separator. Default ' ' (space)
+     * @return string                       generated password
+     */
+    public static function generateRu($lenght = 4, $separator = ' ')
+    {
+        return self::generate(new WordList\Ru(), $lenght, $separator);
+    }
 }

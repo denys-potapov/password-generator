@@ -27,10 +27,15 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('test-test-test-test', $password);
     }
 
-
-    public function testRuTranslit()
+    public function testGenerateRuTranslit()
     {
         $password = Generator::generateRuTranslit(4, ' ');
+        $this->assertNotEmpty($password);
+    }
+
+    public function testGenerateRu()
+    {
+        $password = Generator::generateRu(4, ' ');
         $this->assertNotEmpty($password);
     }
 }
