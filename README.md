@@ -1,7 +1,7 @@
 password-generator
 ==================
 
-[![Build Status](https://travis-ci.org/thephpleague/statsd.png?branch=master)](https://travis-ci.org/thephpleague/statsd)
+[![Build Status](https://travis-ci.org/denys-potapov/password-generator.png?branch=master)](https://travis-ci.org/denys-potapov/password-generator )
 [![Total Downloads](https://poser.pugx.org/barzo/password-generator/downloads.png)](https://packagist.org/packages/barzo/password-generator)
 
 PHP library for generating easy to remember but hard to quess passwords.
@@ -18,7 +18,7 @@ Via Composer
 ``` json
 {
     "require": {
-        "league/:package_name": "~1.0"
+        "barzo/password-generator": "dev-master"
     }
 }
 ```
