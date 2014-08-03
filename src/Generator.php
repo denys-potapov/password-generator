@@ -55,4 +55,17 @@ class Generator
     {
         return self::generate(new WordList\Ru(), $lenght, $separator);
     }
+
+    /**
+     * Static function to generate password with english words
+     * Uses Password\WordList\En
+     * 
+     * @param  integer           $lenght    password length (number of words). Default - 4
+     * @param  string            $separator word separator. Default ' ' (space)
+     * @return string                       generated password
+     */
+    public static function generateEn($lenght = 4, $separator = ' ')
+    {
+        return self::generate(new WordList\En(), $lenght, $separator);
+    }
 }
