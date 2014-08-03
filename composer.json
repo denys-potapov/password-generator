@@ -1,0 +1,24 @@
+{
+    "name": "barzo/password-generator",
+    "description": "PHP library for generating easy to remember but hard to guess passwords",
+    "keywords": [
+        "password"
+    ],
+    "homepage": "https://github.com/denys-potapov/password-generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Denys Potapov",
+            "email": "denys.potapov@gmail.com",
+            "homepage": "http://denyspotapov.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "~3.7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Barzo\\Password\\": ["src/", "tests/"]
+        }
+    }
+}
