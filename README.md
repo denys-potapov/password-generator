@@ -11,6 +11,8 @@ Inspired by [xkcd comic](http://xkcd.com/936/), library generates phrases from f
 * Common Russian words (example "порошок земля нуль платье")
 * Common Russian transliterated (example "vysota razum bumazhka razmer")
 
+[Try it!](http://denyspotapov.com/password/)
+
 ## Install
 
 Via Composer
@@ -31,7 +33,7 @@ Generate password from English words list with default length (4 words) and defa
 echo Barzo\Password\Generator::generateEn();
 ```
 
-Generate passowrd with implict word list and params
+Generate password with implict word list and params
 
 ``` php
 $wordList = new Barzo\Password\WordList\RuTranslit();
@@ -44,7 +46,7 @@ echo Generator::generate($wordList, 5, '-');
 
 ### English (WordList\En)
 
-Example - *idea critic happy chinese*. List of 2048 most frequently used English words ([source](http://www.wordfrequency.info/top5000.asp))
+Example - **idea critic happy chinese**. List of 2048 most frequently used English words ([source](http://www.wordfrequency.info/top5000.asp))
 
 ``` php
 // using short syntax
@@ -56,7 +58,7 @@ echo Generator::generate($wordList);
 ```
 
 ### Russian Transliterated (WordList\RuTranslit)
-Example - *vysota razum bumazhka razmer*. List of 2048 most frequently used Russain nouns ([source](http://dict.ruslang.ru/freq.php)). Words with "hard" to transliterate letters (ц, щ, ь, ъ) excluded.
+Example - **vysota razum bumazhka razmer**. List of 2048 most frequently used Russain nouns ([source](http://dict.ruslang.ru/freq.php)). Words with "hard" to transliterate letters (ц, щ, ь, ъ) excluded.
 
 ``` php
 // using short syntax
@@ -68,7 +70,7 @@ echo Generator::generate($wordList);
 ```
 
 ### Russian (WordList\Ru)
-Example - *порошок земля нуль платье*. List of 2048 most frequently used Russain nouns ([source](http://dict.ruslang.ru/freq.php)). 
+Example - **порошок земля нуль платье**. List of 2048 most frequently used Russain nouns ([source](http://dict.ruslang.ru/freq.php)). 
 
 ``` php
 // using short syntax
