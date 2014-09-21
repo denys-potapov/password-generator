@@ -13,6 +13,9 @@
             "homepage": "http://denyspotapov.com"
         }
     ],
+    "suggest": {
+        "ext-openssl": "Allows to use cryptographically strong random generator" 
+    },
     "require-dev": {
         "phpunit/phpunit": "~3.7.0"
     },

@@ -7,6 +7,32 @@ use Barzo\Password\Generator;
 class GeneratorTest extends \PHPUnit_Framework_TestCase
 {
 
+    public function testGetStrongRandomArray()
+    {
+        if (!function_exists('openssl_random_pseudo_bytes')) {
+            $this->markTestSkipped('Open ssl extension unavaivable');
+        }
+
+        $array = Generator::getStrongRandomArray(2);
+        $this->assertCount(2, $array);
+        $this->assertGreaterThanOrEqual(0, $array[0]);
+        $this->assertLessThanOrEqual(1, $array[0]);
+    }
+
+    public function testGetMtRandomArray()
+    {
+        $array = Generator::getMtRandomArray(2);
+        $this->assertCount(2, $array);
+        $this->assertGreaterThanOrEqual(0, $array[0]);
+        $this->assertLessThanOrEqual(1, $array[0]);
+    }
+
+    public function testGetRandomArray()
+    {
+        $array = Generator::getRandomArray(2);
+        $this->assertCount(2, $array);
+    }
+
     public function testWordListCalled()
     {
         $wordList = $this->getMockForAbstractClass('Barzo\Password\WordListInterface');

@@ -81,17 +81,21 @@ $wordList = new Barzo\Password\WordList\Ru();
 echo Generator::generate($wordList);
 ```
 
+## Security
+
+If OpenSSL extension avaivable library would use [openssl_random_pseudo_bytes](http://php.net/manual/en/function.openssl-random-pseudo-bytes.php) for random number generation.
+
 ## Testing
 
 ``` bash
-$ phpunit
+$ php vendor/bin/phpunit
 ```
-
 
 ## Contributing
 
-Pull requests are welcome. 
+To add new language open an issue with link to frequency dictionary.
 
+Pull requests are welcome. 
 
 ## Credits
 
