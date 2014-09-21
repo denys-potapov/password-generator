@@ -66,18 +66,28 @@ class Generator
     }
   
     /**
-  	 * Static function to generate password
+  	 * Static function to generate password from wordlists.
+     *
+     * If array of wordlist is shorter then length,
+     * function would iterate from the beginning of array
   	 * 
-  	 * @param  WordListInterface $wordList  word list
-  	 * @param  integer           $lenght    password length (number of words). Default - 4
-  	 * @param  string            $separator word separator. Default ' ' (space)
+  	 * @param  WordListInterface[] | WordListInterface 
+     *                           $wordLists array of word lists or word list
+  	 * @param  integer           $lenght    password length in words. Default - 4
+  	 * @param  string            $separator word separator. Default - ' '(space)
   	 * @return string                       generated password
   	 */
-    public static function generate(WordListInterface $wordList, $lenght = 4, $separator = ' ')
+    public static function generate($wordLists, $lenght = 4, $separator = ' ')
     {
+        if (!is_array($wordLists)) {
+            $wordLists = array($wordLists);
+        }
+        $wordListsLength = count($wordLists);
+
         $words = array();
         $randomArray = self::getRandomArray($lenght);
-        foreach ($randomArray as $random) {
+        foreach ($randomArray as $index => $random) {
+            $wordList = $wordLists[$index % $wordListsLength];
             $words[] = $wordList->get($random);
         }
         

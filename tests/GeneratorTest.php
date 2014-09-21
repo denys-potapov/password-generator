@@ -42,6 +42,17 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         Generator::generate($wordList, 5);
     }
 
+    public function testWordListArrayCalled()
+    {
+        $wordList1 = $this->getMockForAbstractClass('Barzo\Password\WordListInterface');
+        $wordList1->expects($this->exactly(2))->method('get');
+
+        $wordList2 = $this->getMockForAbstractClass('Barzo\Password\WordListInterface');
+        $wordList2->expects($this->exactly(1))->method('get');
+
+        Generator::generate(array($wordList1, $wordList2), 3);
+    }
+
     public function testSeparator()
     {
         $wordList = $this->getMockForAbstractClass('Barzo\Password\WordListInterface');

@@ -11,7 +11,7 @@ Inspired by [xkcd comic](http://xkcd.com/936/), library generates phrases from f
 * Common Russian words (example "порошок земля нуль платье")
 * Common Russian transliterated (example "vysota razum bumazhka razmer")
 
-[Try it!](http://denyspotapov.com/password/)
+[Try online](http://denyspotapov.com/password/)
 
 ## Install
 
@@ -42,6 +42,29 @@ $wordList = new Barzo\Password\WordList\RuTranslit();
 echo Generator::generate($wordList, 5, '-');
 ```
 
+## Advanced usage
+
+Call static function Generator::generate to generate passwords from wordlists. Params
+
+- *wordlists* - array of WordListInterface. If array is shorter then length, function 
+  would iterate from the beginning of array.
+- *lenght* - password length in words. Default - 4
+- *separator* - words separator. Default - ' '(space)
+
+Example:
+
+``` php
+echo Generator::generate(
+    [
+        new Barzo\Password\WordList\En(), 
+        new Barzo\Password\WordList\RuTranslit()
+    ],
+    5, 
+    '-'
+);
+
+// would output something like "idea-dovod-critic-sever-happy"
+```
 ## Word lists
 
 ### English (WordList\En)
