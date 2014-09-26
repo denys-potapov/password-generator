@@ -25,9 +25,16 @@ Via Composer
 }
 ```
 
-## Usage
+## Basic usage
 
-Generate password from English words list with default length (4 words) and default separator (space)
+Generate russian password with default length (4 words) and default separator (space). Password would consist of _adjective_, _noun_, _verb_ and _noun_
+
+``` php
+// would output something like "парадный певец вступать юбка"
+echo Barzo\Password\Generator::generateRu();
+```
+
+Generate russian password from English words list with default length (4 words) and default separator (space)
 ``` php
 // would output something like "idea critic happy chinese"
 echo Barzo\Password\Generator::generateEn();
@@ -92,17 +99,16 @@ $wordList = new Barzo\Password\WordList\RuTranslit();
 echo Generator::generate($wordList);
 ```
 
-### Russian (WordList\Ru)
-Example - **порошок земля нуль платье**. List of 2048 most frequently used Russain nouns ([source](http://dict.ruslang.ru/freq.php)). 
+### Russian
 
-``` php
-// using short syntax
-echo Barzo\Password\Generator::generateRu();
+Lists consist of 2048 most frequently used Russain words ([source](http://dict.ruslang.ru/freq.php)). Word shorter than 4 letters or logner than 8 letters - skipped.
 
-//  equivalent
-$wordList = new Barzo\Password\WordList\Ru();
-echo Generator::generate($wordList);
-```
+Class                        | Comment    | Example 
+---------------------------- | -----------|---------------
+** WordList\Ru            ** | all words  | быть, этот
+** WordList\Ru\Nouns      ** | nouns      | человек, время
+** WordList\Ru\Verbs      ** | verbs      | быть, мочь
+** WordList\Ru\Adjectives ** | adjectives | новый, большой
 
 ## Security
 
@@ -122,8 +128,7 @@ Pull requests are welcome.
 
 ## Credits
 
-- [All Contributors](https://github.com/denys-potapov/password-generator/contributors)
-
+[All Contributors](https://github.com/denys-potapov/password-generator/contributors)
 
 ## License
 

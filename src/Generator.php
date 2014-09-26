@@ -117,7 +117,11 @@ class Generator
      */
     public static function generateRu($lenght = 4, $separator = ' ')
     {
-        return self::generate(new WordList\Ru(), $lenght, $separator);
+        $adjectives = new WordList\Ru\Adjectives();
+        $nouns = new WordList\Ru\Nouns();
+        $verbs = new WordList\Ru\Verbs();
+        
+        return self::generate([$adjectives, $nouns, $verbs, $nouns], $lenght, $separator);
     }
 
     /**
