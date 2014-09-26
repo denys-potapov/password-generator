@@ -5,10 +5,10 @@ PHP password generator
 [![Total Downloads](https://poser.pugx.org/barzo/password-generator/downloads.png)](https://packagist.org/packages/barzo/password-generator)
 
 PHP library for generating easy to remember, but hard to quess passwords.
-Inspired by [xkcd comic](http://xkcd.com/936/), library generates phrases from frequently used words. Contains different word lists:
+Inspired by [xkcd comic](http://xkcd.com/936/), library generates phrases from frequently used words: 
 
 * Common English words (example "idea critic happy chinese")
-* Common Russian words (example "порошок земля нуль платье")
+* Russian phrases (example "парадный певец вступать юбка")
 * Common Russian transliterated (example "vysota razum bumazhka razmer")
 
 [Try online](http://denyspotapov.com/password/)
@@ -105,10 +105,10 @@ Lists consist of 2048 most frequently used Russain words ([source](http://dict.r
 
 Class                        | Comment    | Example 
 ---------------------------- | -----------|---------------
-** WordList\Ru            ** | all words  | быть, этот
-** WordList\Ru\Nouns      ** | nouns      | человек, время
-** WordList\Ru\Verbs      ** | verbs      | быть, мочь
-** WordList\Ru\Adjectives ** | adjectives | новый, большой
+**WordList\Ru**              | all words  | быть, этот
+**WordList\Ru\Nouns**        | nouns      | человек, время
+**WordList\Ru\Verbs**        | verbs      | быть, мочь
+**WordList\Ru\Adjectives**   | adjectives | новый, большой
 
 ## Security
 
