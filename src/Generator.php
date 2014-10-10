@@ -110,7 +110,7 @@ class Generator
         $nouns = new WordList\RuTranslit\Nouns();
         $verbs = new WordList\RuTranslit\Verbs();
         
-        return self::generate([$adjectives, $nouns, $verbs, $nouns], $lenght, $separator);
+        return self::generate(array($adjectives, $nouns, $verbs, $nouns), $lenght, $separator);
     }
 
     /**
@@ -129,7 +129,7 @@ class Generator
         $nouns = new WordList\Ru\Nouns();
         $verbs = new WordList\Ru\Verbs();
         
-        return self::generate([$adjectives, $nouns, $verbs, $nouns], $lenght, $separator);
+        return self::generate(array($adjectives, $nouns, $verbs, $nouns), $lenght, $separator);
     }
 
     /**
