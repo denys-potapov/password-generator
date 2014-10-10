@@ -95,25 +95,33 @@ class Generator
     }
 
     /**
-     * Static function to generate password with Russian transliterated words
-     * Uses Password\WordList\RuTranslit
+     * Static function generates transliterated Russian phrase password 
      * 
-     * @param  integer           $lenght    password length (number of words). Default - 4
-     * @param  string            $separator word separator. Default ' ' (space)
-     * @return string                       generated password
+     * Password would consist of adjective, noun, verb and noun.
+     * Example "proshlyy khutor osvoit pribyl"
+     * 
+     * @param  integer $lenght    password length (number of words). Default - 4
+     * @param  string  $separator word separator. Default ' ' (space)
+     * @return string             generated password
      */
     public static function generateRuTranslit($lenght = 4, $separator = ' ')
     {
-        return self::generate(new WordList\RuTranslit(), $lenght, $separator);
+        $adjectives = new WordList\RuTranslit\Adjectives();
+        $nouns = new WordList\RuTranslit\Nouns();
+        $verbs = new WordList\RuTranslit\Verbs();
+        
+        return self::generate([$adjectives, $nouns, $verbs, $nouns], $lenght, $separator);
     }
 
     /**
-     * Static function to generate password with Russian words
-     * Uses Password\WordList\Ru
+     * Static function generates Russian phrase password.
+     *
+     * Password would consist of adjective, noun, verb and noun.
+     * Example "парадный певец вступать юбка"
      * 
-     * @param  integer           $lenght    password length (number of words). Default - 4
-     * @param  string            $separator word separator. Default ' ' (space)
-     * @return string                       generated password
+     * @param  integer $lenght    password length (number of words). Default - 4
+     * @param  string  $separator word separator. Default ' ' (space)
+     * @return string             generated password
      */
     public static function generateRu($lenght = 4, $separator = ' ')
     {

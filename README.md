@@ -9,7 +9,7 @@ Inspired by [xkcd comic](http://xkcd.com/936/), library generates phrases from f
 
 * Common English words (example "idea critic happy chinese")
 * Russian phrases (example "парадный певец вступать юбка")
-* Common Russian transliterated (example "vysota razum bumazhka razmer")
+* Russian transliterated phrases (example "proshlyy khutor osvoit pribyl")
 
 [Try online](http://denyspotapov.com/password/)
 
@@ -27,11 +27,20 @@ Via Composer
 
 ## Basic usage
 
-Generate russian password with default length (4 words) and default separator (space). Password would consist of _adjective_, _noun_, _verb_ and _noun_
+Generate russian password with default length (4 words) and default separator (space). 
+Password would consist of _adjective_, _noun_, _verb_ and _noun_
 
 ``` php
 // would output something like "парадный певец вступать юбка"
 echo Barzo\Password\Generator::generateRu();
+```
+
+Generate russian transliterated password with default length and default separator. 
+Password would consist of _adjective_, _noun_, _verb_ and _noun_
+
+``` php
+// would output something like "proshlyy khutor osvoit pribyl"
+echo Barzo\Password\Generator::generateRuTranslit();
 ```
 
 Generate russian password from English words list with default length (4 words) and default separator (space)
@@ -87,17 +96,16 @@ $wordList = new Barzo\Password\WordList\En();
 echo Generator::generate($wordList);
 ```
 
-### Russian Transliterated (WordList\RuTranslit)
-Example - **vysota razum bumazhka razmer**. List of 2048 most frequently used Russain nouns ([source](http://dict.ruslang.ru/freq.php)). Words with "hard" to transliterate letters (ц, щ, ь, ъ) excluded.
+### Russian Transliterated 
 
-``` php
-// using short syntax
-echo Barzo\Password\Generator::generateRuTranslit();
+List of 2048 transliterated most frequently used Russain words ([source](http://dict.ruslang.ru/freq.php)). Word shorter than 4 letters or logner than 8 letters - skipped. "Hard" to transliterate letters (ь, ъ) excluded.
 
-//  equivalent
-$wordList = new Barzo\Password\WordList\RuTranslit();
-echo Generator::generate($wordList);
-```
+Class                                | Comment    | Example 
+------------------------------------ | -----------|---------------
+**WordList\RuTranslit**              | all words  | chto, etot
+**WordList\RuTranslit\Nouns**        | nouns      | chelovek, vremya
+**WordList\RuTranslit\Verbs**        | verbs      | moch, skazat
+**WordList\RuTranslit\Adjectives**   | adjectives | novyy, bolshoy
 
 ### Russian
 
