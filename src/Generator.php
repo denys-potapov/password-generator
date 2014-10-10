@@ -19,13 +19,13 @@ class Generator
      */
     public static function getStrongRandomArray($length)
     {
-        $bytes = openssl_random_pseudo_bytes($length * 4);
-        $longs = unpack('L*', $bytes);
+        $bytes = openssl_random_pseudo_bytes($length * 2);
+        $longs = unpack('S*', $bytes);
         $result = array();
         foreach ($longs as $long) {
             // should check if this division doesn't affects
             // the random distirbution
-            $result[] = $long / 0xffffffff;
+            $result[] = $long / 0xffff;
         }
 
         return $result;
