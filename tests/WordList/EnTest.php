@@ -9,13 +9,13 @@ class EnTest extends \PHPUnit_Framework_TestCase
     public function testEn()
     {
         $wordList = new WordList\En();
-        $this->assertEquals('ruling', $wordList->get(1));
+        $this->assertEquals('spread', $wordList->get(1));
     }
     
     public function testEnNouns()
     {
         $wordList = new WordList\En\Nouns();
-        $this->assertEquals('unison', $wordList->get(1));
+        $this->assertEquals('glamor', $wordList->get(1));
     }
     
     public function testEnVerbs()
