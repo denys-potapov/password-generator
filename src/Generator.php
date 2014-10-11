@@ -133,15 +133,21 @@ class Generator
     }
 
     /**
-     * Static function to generate password with english words
-     * Uses Password\WordList\En
+     * Static function generates English phrase password.
+     *
+     * Password would consist of adjective, noun, verb and noun.
+     * Example "ruling motion rock half"
      * 
-     * @param  integer           $lenght    password length (number of words). Default - 4
-     * @param  string            $separator word separator. Default ' ' (space)
-     * @return string                       generated password
+     * @param  integer $lenght    password length (number of words). Default - 4
+     * @param  string  $separator word separator. Default ' ' (space)
+     * @return string             generated password
      */
     public static function generateEn($lenght = 4, $separator = ' ')
     {
-        return self::generate(new WordList\En(), $lenght, $separator);
+        $adjectives = new WordList\En\Adjectives();
+        $nouns = new WordList\En\Nouns();
+        $verbs = new WordList\En\Verbs();
+
+        return self::generate(array($adjectives, $nouns, $verbs, $nouns), $lenght, $separator);
     }
 }
