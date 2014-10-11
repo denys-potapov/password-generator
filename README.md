@@ -7,7 +7,7 @@ PHP password generator
 PHP library for generating easy to remember, but hard to quess passwords.
 Inspired by [xkcd comic](http://xkcd.com/936/), library generates phrases from frequently used words: 
 
-* Common English words (example "idea critic happy chinese")
+* English phrases (example "ruling motion rock half")
 * Russian phrases (example "парадный певец вступать юбка")
 * Russian transliterated phrases (example "proshlyy khutor osvoit pribyl")
 
@@ -20,12 +20,27 @@ Via Composer
 ``` json
 {
     "require": {
-        "barzo/password-generator": "dev-master"
+        "barzo/password-generator": "~0.2"
     }
 }
 ```
 
 ## Basic usage
+
+Generate english password with default length and default separator. 
+Password would consist of _adjective_, _noun_, _verb_ and _noun_
+
+``` php
+// would output something like "ruling motion rock half"
+echo Barzo\Password\Generator::generateEn();
+```
+
+Function accepts length and separator paramenetrs.
+
+``` php
+// would output something like "patient-hate-boot-tail-reigning"
+echo Barzo\Password\Generator::generateEn(5, '-');
+```
 
 Generate russian password with default length (4 words) and default separator (space). 
 Password would consist of _adjective_, _noun_, _verb_ and _noun_
@@ -41,21 +56,6 @@ Password would consist of _adjective_, _noun_, _verb_ and _noun_
 ``` php
 // would output something like "proshlyy khutor osvoit pribyl"
 echo Barzo\Password\Generator::generateRuTranslit();
-```
-
-Generate russian password from English words list with default length (4 words) and default separator (space)
-``` php
-// would output something like "idea critic happy chinese"
-echo Barzo\Password\Generator::generateEn();
-```
-
-Generate password with implict word list and params
-
-``` php
-$wordList = new Barzo\Password\WordList\RuTranslit();
-
-// would output something like "dovod-gore-sever-nomer-druzhka"
-echo Generator::generate($wordList, 5, '-');
 ```
 
 ## Advanced usage
@@ -83,18 +83,16 @@ echo Generator::generate(
 ```
 ## Word lists
 
-### English (WordList\En)
+### English
 
-Example - **idea critic happy chinese**. List of 2048 most frequently used English words ([source](http://www.wordfrequency.info/top5000.asp))
+List of 2048 most frequently used English words. Word shorter than 4 letters or logner than 6 letters (8 for adjectives)- skipped. 
 
-``` php
-// using short syntax
-echo Barzo\Password\Generator::generateEn();
-
-//  equivalent
-$wordList = new Barzo\Password\WordList\En();
-echo Generator::generate($wordList);
-```
+Class                        | Comment    | Example 
+---------------------------- | -----------|---------------
+**WordList\En**              | all words  | have, that
+**WordList\En\Nouns**        | nouns      | time, year
+**WordList\En\Verbs**        | verbs      | have, would
+**WordList\En\Adjectives**   | adjectives | other, good
 
 ### Russian Transliterated 
 
