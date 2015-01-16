@@ -9,7 +9,7 @@ class RuTranslitTest extends \PHPUnit_Framework_TestCase
     public function testRuTranslit()
     {
         $wordList = new WordList\RuTranslit();
-        $this->assertEquals('vodit', $wordList->get(1));
+        $this->assertEquals('yukos', $wordList->get(1));
     }
 
     public function testRuTranslitAdjectives()
