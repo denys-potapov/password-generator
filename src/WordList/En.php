@@ -2060,6 +2060,6 @@ class En extends StaticArray
         'shared',
         'pillow',
         'cook',
-        'spread',
+        'spread'
     );
 }
