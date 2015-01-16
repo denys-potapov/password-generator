@@ -11,7 +11,7 @@ Inspired by [xkcd comic](http://xkcd.com/936/), library generates phrases from f
 * Russian phrases (example "куртка отдел сыграть доверие")
 * Russian transliterated phrases (example "yunost osobo otnesti opyat")
 
-[Try online](http://denyspotapov.com//password/?en)
+[Try online](http://denyspotapov.com/password/?en)
 
 ## Install
 
