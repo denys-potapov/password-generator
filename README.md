@@ -1,4 +1,4 @@
-PHP password generator
+Phrase password generator
 ==================
 
 [![Build Status](https://travis-ci.org/denys-potapov/password-generator.png?branch=master)](https://travis-ci.org/denys-potapov/password-generator )
@@ -7,9 +7,9 @@ PHP password generator
 PHP library for generating easy to remember, but hard to quess passwords.
 Inspired by [xkcd comic](http://xkcd.com/936/), library generates phrases from frequently used words: 
 
-* English phrases (example "ruling motion rock half")
-* Russian phrases (example "парадный певец вступать юбка")
-* Russian transliterated phrases (example "proshlyy khutor osvoit pribyl")
+* English phrases (example "throat fast only idea")
+* Russian phrases (example "куртка отдел сыграть доверие")
+* Russian transliterated phrases (example "yunost osobo otnesti opyat")
 
 [Try online](http://denyspotapov.com/password/)
 
@@ -20,41 +20,38 @@ Via Composer
 ``` json
 {
     "require": {
-        "barzo/password-generator": "~0.2"
+        "barzo/password-generator": "~0.3"
     }
 }
 ```
 
 ## Basic usage
 
-Generate english password with default length and default separator. 
-Password would consist of _adjective_, _noun_, _verb_ and _noun_
+Generate English password with default length and default separator. 
 
 ``` php
-// would output something like "ruling motion rock half"
+// would output something like "throat fast only idea"
 echo Barzo\Password\Generator::generateEn();
 ```
 
 Function accepts length and separator paramenetrs.
 
 ``` php
-// would output something like "patient-hate-boot-tail-reigning"
+// would output something like "ritual-error-raise-arab-tail"
 echo Barzo\Password\Generator::generateEn(5, '-');
 ```
 
-Generate russian password with default length (4 words) and default separator (space). 
-Password would consist of _adjective_, _noun_, _verb_ and _noun_
+Generate Russian password with default length (4 words) and default separator (space). 
 
 ``` php
-// would output something like "парадный певец вступать юбка"
+// would output something like "куртка отдел сыграть доверие"
 echo Barzo\Password\Generator::generateRu();
 ```
 
 Generate russian transliterated password with default length and default separator. 
-Password would consist of _adjective_, _noun_, _verb_ and _noun_
 
 ``` php
-// would output something like "proshlyy khutor osvoit pribyl"
+// would output something like "yunost osobo otnesti opyat"
 echo Barzo\Password\Generator::generateRuTranslit();
 ```
 
@@ -85,36 +82,36 @@ echo Generator::generate(
 
 ### English
 
-List of 2048 most frequently used English words. Word shorter than 4 letters or logner than 6 letters (8 for adjectives)- skipped. 
+List of 2048 most frequently used English words.
 
-Class                        | Comment    | Example 
----------------------------- | -----------|---------------
-**WordList\En**              | all words  | have, that
-**WordList\En\Nouns**        | nouns      | time, year
-**WordList\En\Verbs**        | verbs      | have, would
-**WordList\En\Adjectives**   | adjectives | other, good
+Class                        | Comment    | Word lenghth | Example 
+---------------------------- | -----------|--------------|-----------
+**WordList\En**              | all words  | 4-6          | have, that
+**WordList\En\Nouns**        | nouns      | 4-6          | time, year
+**WordList\En\Verbs**        | verbs      | 4-6          | have, would
+**WordList\En\Adjectives**   | adjectives | 4-8          | other, good
 
 ### Russian Transliterated 
 
-List of 2048 transliterated most frequently used Russain words ([source](http://dict.ruslang.ru/freq.php)). Word shorter than 4 letters or logner than 8 letters - skipped. "Hard" to transliterate letters (ь, ъ) excluded.
+List of 2048 transliterated most frequently used Russain words ([source](http://dict.ruslang.ru/freq.php)). "Hard" to transliterate letters (ь, ъ) excluded. 
 
-Class                                | Comment    | Example 
------------------------------------- | -----------|---------------
-**WordList\RuTranslit**              | all words  | chto, etot
-**WordList\RuTranslit\Nouns**        | nouns      | chelovek, vremya
-**WordList\RuTranslit\Verbs**        | verbs      | moch, skazat
-**WordList\RuTranslit\Adjectives**   | adjectives | novyy, bolshoy
+Class                                | Comment    | Word lenghth | Example 
+------------------------------------ | -----------|--------------|---------------
+**WordList\RuTranslit**              | all words  | 4-7          | chto, etot
+**WordList\RuTranslit\Nouns**        | nouns      | 4-8          | chelovek, vremya
+**WordList\RuTranslit\Verbs**        | verbs      | 4-8          | moch, skazat
+**WordList\RuTranslit\Adjectives**   | adjectives | 4-8          | novyy, bolshoy
 
 ### Russian
 
-Lists consist of 2048 most frequently used Russain words ([source](http://dict.ruslang.ru/freq.php)). Word shorter than 4 letters or logner than 8 letters - skipped.
+Lists consist of 2048 most frequently used Russain words ([source](http://dict.ruslang.ru/freq.php)).
 
-Class                        | Comment    | Example 
----------------------------- | -----------|---------------
-**WordList\Ru**              | all words  | быть, этот
-**WordList\Ru\Nouns**        | nouns      | человек, время
-**WordList\Ru\Verbs**        | verbs      | быть, мочь
-**WordList\Ru\Adjectives**   | adjectives | новый, большой
+Class                        | Comment    | Word lenghth | Example 
+---------------------------- | -----------|--------------|---------------
+**WordList\Ru**              | all words  | 4-7          | быть, этот
+**WordList\Ru\Nouns**        | nouns      | 4-8          | человек, время
+**WordList\Ru\Verbs**        | verbs      | 4-8          | быть, мочь
+**WordList\Ru\Adjectives**   | adjectives | 4-8          | новый, большой
 
 ## Security
 
