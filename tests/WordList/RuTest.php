@@ -9,7 +9,7 @@ class RuTest extends \PHPUnit_Framework_TestCase
     public function testRu()
     {
         $wordList = new WordList\Ru();
-        $this->assertEquals('аренда', $wordList->get(1));
+        $this->assertEquals('творец', $wordList->get(1));
     }
 
     public function testRuNouns()
