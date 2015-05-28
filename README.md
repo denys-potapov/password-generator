@@ -8,8 +8,8 @@ PHP library for generating easy to remember, but hard to quess passwords.
 Inspired by [xkcd comic](http://xkcd.com/936/), library generates phrases from frequently used words: 
 
 * English phrases (example "throat fast only idea")
-* Russian phrases (example "куртка отдел сыграть доверие")
-* Russian transliterated phrases (example "yunost osobo otnesti opyat")
+* Russian phrases (example "тоже металл пора подача")
+* Russian transliterated phrases (example "kater nekiy zabrat dazhe")
 
 [Try online](http://denyspotapov.com/password/?en)
 
@@ -44,14 +44,14 @@ echo Barzo\Password\Generator::generateEn(5, '-');
 Generate Russian password with default length (4 words) and default separator (space). 
 
 ``` php
-// would output something like "куртка отдел сыграть доверие"
+// would output something like "тоже металл пора подача"
 echo Barzo\Password\Generator::generateRu();
 ```
 
 Generate russian transliterated password with default length and default separator. 
 
 ``` php
-// would output something like "yunost osobo otnesti opyat"
+// would output something like "kater nekiy zabrat dazhe"
 echo Barzo\Password\Generator::generateRuTranslit();
 ```
 
@@ -97,7 +97,7 @@ List of 2048 transliterated most frequently used Russain words ([source](http://
 
 Class                                | Comment    | Word lenghth | Example 
 ------------------------------------ | -----------|--------------|---------------
-**WordList\RuTranslit**              | all words  | 4-7          | chto, etot
+**WordList\RuTranslit**              | all words  | 4-6          | chto, etot
 **WordList\RuTranslit\Nouns**        | nouns      | 4-8          | chelovek, vremya
 **WordList\RuTranslit\Verbs**        | verbs      | 4-8          | moch, skazat
 **WordList\RuTranslit\Adjectives**   | adjectives | 4-8          | novyy, bolshoy
@@ -108,7 +108,7 @@ Lists consist of 2048 most frequently used Russain words ([source](http://dict.r
 
 Class                        | Comment    | Word lenghth | Example 
 ---------------------------- | -----------|--------------|---------------
-**WordList\Ru**              | all words  | 4-7          | быть, этот
+**WordList\Ru**              | all words  | 4-6          | быть, этот
 **WordList\Ru\Nouns**        | nouns      | 4-8          | человек, время
 **WordList\Ru\Verbs**        | verbs      | 4-8          | быть, мочь
 **WordList\Ru\Adjectives**   | adjectives | 4-8          | новый, большой
@@ -122,6 +122,12 @@ If OpenSSL extension avaivable library would use [openssl_random_pseudo_bytes](h
 ``` bash
 $ php vendor/bin/phpunit
 ```
+## Changelog
+
+### 0.4.0
+
+- Updated **WordList\Ru**. Now only words with length from 4 to 6
+- Updated **WordList\RuTranslit**. Now only words with length from 4 to 6
 
 ## Contributing
 
