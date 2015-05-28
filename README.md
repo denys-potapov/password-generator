@@ -21,7 +21,7 @@ Via Composer
 ``` json
 {
     "require": {
-        "barzo/password-generator": "~0.3"
+        "barzo/password-generator": "~0.4"
     }
 }
 ```
