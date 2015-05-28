@@ -8,6 +8,7 @@ PHP library for generating easy to remember, but hard to quess passwords.
 Inspired by [xkcd comic](http://xkcd.com/936/), library generates phrases from frequently used words: 
 
 * English phrases (example "throat fast only idea")
+* German phrases (examle "laut welt ganze liter")
 * Russian phrases (example "тоже металл пора подача")
 * Russian transliterated phrases (example "kater nekiy zabrat dazhe")
 
@@ -27,32 +28,29 @@ Via Composer
 
 ## Basic usage
 
-Generate English password with default length and default separator. 
+Generate password with default length (4 words) and default separator (space).
 
 ``` php
+use Barzo\Password\Generator;
+
 // would output something like "throat fast only idea"
-echo Barzo\Password\Generator::generateEn();
+echo Generator::generateEn();
+
+// would output something like "laut welt ganze liter"
+echo Generator::generateDe();
+
+// would output something like "тоже металл пора подача"
+echo Generator::generateRu();
+
+// would output something like "kater nekiy zabrat dazhe"
+echo Generator::generateRuTranslit();
 ```
 
-Function accepts length and separator paramenetrs.
+Each of above functions accepts length and separator paramenetrs.
 
 ``` php
 // would output something like "ritual-error-raise-arab-tail"
 echo Barzo\Password\Generator::generateEn(5, '-');
-```
-
-Generate Russian password with default length (4 words) and default separator (space). 
-
-``` php
-// would output something like "тоже металл пора подача"
-echo Barzo\Password\Generator::generateRu();
-```
-
-Generate russian transliterated password with default length and default separator. 
-
-``` php
-// would output something like "kater nekiy zabrat dazhe"
-echo Barzo\Password\Generator::generateRuTranslit();
 ```
 
 ## Advanced usage
@@ -91,6 +89,14 @@ Class                        | Comment    | Word lenghth | Example
 **WordList\En\Verbs**        | verbs      | 4-6          | have, would
 **WordList\En\Adjectives**   | adjectives | 4-8          | other, good
 
+### German
+
+List of 2048 most frequently used german words([source](ttp://wortschatz.uni-leipzig.de/html/wliste.html)). Words with diacritic letters (ä, ö, ü) and eszett (ß) excluded.
+
+Class                        | Comment    | Word lenghth | Example 
+---------------------------- | -----------|--------------|-----------
+**WordList\De**              | all words  | 4-6          | sich, nicht
+
 ### Russian Transliterated 
 
 List of 2048 transliterated most frequently used Russain words ([source](http://dict.ruslang.ru/freq.php)). "Hard" to transliterate letters (ь, ъ) excluded. 
@@ -128,6 +134,7 @@ $ php vendor/bin/phpunit
 
 - Updated **WordList\Ru**. Now only words with length from 4 to 6
 - Updated **WordList\RuTranslit**. Now only words with length from 4 to 6
+- Added German words list
 
 ## Contributing
 
