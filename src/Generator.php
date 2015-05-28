@@ -94,7 +94,7 @@ class Generator
     /**
      * Static function generates transliterated Russian phrase password
      *
-     * Example "vdol strogiy boyets bokal"
+     * Example "kater nekiy zabrat dazhe"
      *
      * @param  integer $lenght    password length (number of words). Default - 4
      * @param  string  $separator word separator. Default ' ' (space)
@@ -108,7 +108,7 @@ class Generator
     /**
      * Static function generates Russian phrase password.
      *
-     * Example "двое городок оказать смех"
+     * Example "тоже металл пора подача"
      *
      * @param  integer $lenght    password length (number of words). Default - 4
      * @param  string  $separator word separator. Default ' ' (space)
@@ -131,5 +131,20 @@ class Generator
     public static function generateEn($lenght = 4, $separator = ' ')
     {
         return self::generate(new WordList\En(), $lenght, $separator);
+    }
+
+
+    /**
+     * Static function generates German phrase password.
+     *
+     * Example "laut welt ganze liter"
+     *
+     * @param  integer $lenght    password length (number of words). Default - 4
+     * @param  string  $separator word separator. Default ' ' (space)
+     * @return string  generated password
+     */
+    public static function generateDe($lenght = 4, $separator = ' ')
+    {
+        return self::generate(new WordList\De(), $lenght, $separator);
     }
 }

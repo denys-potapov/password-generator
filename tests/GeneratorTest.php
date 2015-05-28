@@ -81,4 +81,11 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $password = Generator::generateEn(4, ' ');
         $this->assertNotEmpty($password);
     }
+
+    public function testGenerateDe()
+    {
+        $password = Generator::generateDe(4, ' ');
+        var_dump($password);
+        $this->assertNotEmpty($password);
+    }
 }
