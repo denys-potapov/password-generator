@@ -1,6 +1,6 @@
 <?php
 
-namespace Barzo\Password\Test;
+namespace Barzo\Password\Tests\WordList;
 
 use Barzo\Password\WordList;
 
