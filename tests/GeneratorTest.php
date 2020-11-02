@@ -1,6 +1,6 @@
 <?php
 
-namespace Barzo\Password\Test;
+namespace Barzo\Password\Tests;
 
 use Barzo\Password\Generator;
 

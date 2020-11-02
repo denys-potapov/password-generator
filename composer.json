@@ -21,7 +21,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Barzo\\Password\\": ["src/", "tests/"]
+            "Barzo\\Password\\": ["src/"],
+            "Barzo\\Password\\Tests\\": ["tests/"]
         }
     }
 }
