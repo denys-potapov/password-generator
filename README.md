@@ -131,6 +131,10 @@ $ php vendor/bin/phpunit
 ```
 ## Changelog
 
+### 1.0.0
+
+- Update namespaces for psr-4 and composer 2 (thanks to @parkourben99)
+
 ### 0.4.0
 
 - Updated **WordList\Ru**. Now only words with length from 4 to 6
