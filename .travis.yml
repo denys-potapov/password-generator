@@ -1,18 +1,16 @@
 language: php
 
 php:
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
+  - 7.2
+  - 7.3
 
 before_script:
   - composer self-update
   - composer install
-  - if [ $TRAVIS_PHP_VERSION == '5.6' ]; then pyrus install pear/PHP_CodeSniffer; fi
-  - if [ $TRAVIS_PHP_VERSION == '5.6' ]; then phpenv rehash; fi
+  - if [ $TRAVIS_PHP_VERSION == '7.3' ]; then pear install pear/PHP_CodeSniffer; fi
+  - if [ $TRAVIS_PHP_VERSION == '7.3' ]; then phpenv rehash; fi
 
 script:
-  - if [ $TRAVIS_PHP_VERSION == '5.6' ]; then phpcs --standard=psr2 src/; fi
+  - if [ $TRAVIS_PHP_VERSION == '7.3' ]; then phpcs src/; fi
   - phpunit --coverage-text
   
